@@ -1,7 +1,14 @@
 import React from 'react'
 
 export function ShoppingCart(props){
-    let renderList = props.cartListProp.map(item =><li>{item.name}</li>)
+    let renderList = props.cartListProp.map(item => {
+        return(
+            <>
+                <li>{item.name}</li>
+                <li>R$ {item.price}</li>
+            </>
+        )
+    })
 
     return(
         <>

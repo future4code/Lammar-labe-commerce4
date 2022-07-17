@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 // Componente ProductCards
 export const CardsDisplay = styled.div`
     display: flex;

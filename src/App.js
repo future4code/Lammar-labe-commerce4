@@ -8,14 +8,14 @@ function App() {
   const [productDb, setProductDb] = useState(mockDb)
   const [cartList, setCartList] = useState([])
 
-  const addProduct = () => {
-
+  const addProduct = (data) => {
+    setCartList([...cartList, data])
   }
 
   return (
     <>
+      <ProductCards dbListProp={productDb} setCartListProp={addProduct}/>
       <ShoppingCart cartListProp={cartList}/>
-      <ProductCards dbListProp={productDb}/>
     </>
   );
 }
