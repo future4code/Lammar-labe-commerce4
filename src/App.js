@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <ShoppingCart cartListProp={cartList}/>
-      <ProductCard/>
+      <ProductCards/>
     </>
   );
 }
