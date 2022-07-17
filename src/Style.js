@@ -26,3 +26,17 @@ export const ProductCardStyle = styled.div`
         align-self: center;
     }
 `
+
+// LeftBar
+
+export const MainFiltros = styled.div`
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+`
+export const Filtros = styled.label`
+display: flex;
+flex-direction: column;
+padding: 10px 0;
+`
