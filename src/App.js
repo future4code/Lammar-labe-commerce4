@@ -9,13 +9,36 @@ import {LeftBar} from './Components/LeftBar'
 function App() {
   const [productDb, setProductDb] = useState(mockDb)
   const [cartList, setCartList] = useState([])
+  const [busca, setBusca] = useState("")
+  const [minPreco, setMinPreco] =useState(-Infinity)
+  const [maxPreco, setMaxPreco] =useState(Infinity)
   const addProduct = () => {
   }
   return (
     <>
-      <LeftBar/>
-      <ShoppingCart cartListProp={cartList}/>
-      <ProductCards/>
+      <LeftBar
+      minPreco={minPreco}
+      maxPreco={maxPreco}
+      busca={busca}
+      setMinPreco={setMinPreco}
+      setMaxPreco={setMaxPreco}
+      setBusca={setBusca}/>
+      <>
+      {productDb.filter((produto)=>{
+        return produto.price >= minPreco || minPreco ===""
+      })
+      .filter((produto)=>{
+        return produto.price <= maxPreco || maxPreco ===""
+      })
+      .filter((produto)=>{
+        return produto.name.includes(busca)
+      })
+
+      .map(mockDb => {
+        return <>key={mockDb.id} mockDb={mockDb}</> 
+      })}</>
+      {/* <ShoppingCart cartListProp={cartList}/> */}
+      {/* <ProductCards/> */}
     </>
   );
 }
