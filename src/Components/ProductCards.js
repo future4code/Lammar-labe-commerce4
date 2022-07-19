@@ -12,8 +12,18 @@ export function ProductCards(props){
             const findIndex = productList2.findIndex(newProduct => {
                 return newProduct === item
             })
-            props.setCartListProp(productList[findIndex])
+            // props.setCartListProp(productList[findIndex])
+            props.setCartListProp([
+                if (condition) {
+                    
+                }
+                {id: productList[findIndex].id,
+                quantity: ,
+                name: productList[findIndex].name,
+                }
+            ])
         }
+        // }
 
         return(
             <ProductCardStyle key={index}>
