@@ -16,7 +16,7 @@ export const ProductCardStyle = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 10px;
-
+    
     p{
         padding: 0 10px;
         margin: 5px 0;
@@ -33,8 +33,9 @@ export const MainFiltros = styled.div`
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    padding: 10px;
     width: 300px;
+
+    
 `
 export const Filtros = styled.label`
 display: flex;
