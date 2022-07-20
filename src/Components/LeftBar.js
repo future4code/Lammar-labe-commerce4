@@ -1,43 +1,27 @@
-import React from 'react';
-import { MainFiltros, Filtros } from "../Style";
+// import React, {useState} from "react";
+// import { mockDb } from "../MockUpDados";
+// export function LeftBar(props){
+//     const [listaProdutos, setListaProdutos] = useState(mockDb)
+//     const [busca, setBusca] = useState("")
+   
+    
+//     {listaProdutos.filter((item)=>{
+//           return item.name.includes(busca)
+//         }).map(item =>{
+//           return <div key = {item.name} item={item} />
+//         })
+//     }
+    
+//     function handleNome (event) {
+//         setBusca(event.target.value)
+//     }
+    
+//     return (
+//             <input
+//             value={busca}
+//             onChange={handleNome}/>
+//             )
 
 
 
-export function LeftBar (props){
-      function handleMinimo (event) {
-        props.setMinPreco(event.target.value)
-    }
-
-    function handleMaximo (event) {
-        props.setMaxPreco(event.target.value)
-    }
-
-    function handleNome (event) {
-        props.setBusca(event.target.value)
-    }
-    return (
-        <MainFiltros>
-            <h2>Filtros</h2>
-            
-            <Filtros>
-                Valor Minimo:
-                <input type={'number'}
-                value={props.minPrice}
-                onChange={handleMinimo}/>;
-            </Filtros>
-            <Filtros>
-                Valor Maximo:
-                <input type={'number'}
-                value={props.maxPreco}
-                onChange={handleMaximo}/>;
-            </Filtros>
-            <Filtros>
-                Busca por Nome:
-                <input
-                value={props.busca}
-                onChange={handleNome}/>;
-            </Filtros>
-
-        </MainFiltros>
-    )
-}
+// }
