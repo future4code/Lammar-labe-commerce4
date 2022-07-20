@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <ProductCards dbListProp={productDb} setCartListProp={addProduct}/>
+      <ProductCards dbListProp={productDb} setCartListProp={addProduct} cartListProp={cartList}/>
       <ShoppingCart cartListProp={cartList}/>
     </>
   );

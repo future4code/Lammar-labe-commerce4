@@ -13,17 +13,35 @@ export function ProductCards(props){
                 return newProduct === item
             })
             // props.setCartListProp(productList[findIndex])
-            props.setCartListProp([
-                if (condition) {
-                    
-                }
+
+            let newItem = 
                 {id: productList[findIndex].id,
-                quantity: ,
+                quantity: 1,
                 name: productList[findIndex].name,
                 }
-            ])
+
+            // for (const item of props.cartListProp) {
+            //     if (item.id === newItem.id) {
+            //         item.quantity = item.quantity+1
+            //     } else {
+            //         props.setCartListProp([...cartListProp, newItem])
+            //     }
+            // }
+
+            // props.setCartListProp([
+            //     {id: productList[findIndex].id,
+            //     quantity: 0,
+            //     name: productList[findIndex].name,
+            //     }
+            // ])
+
+            props.setCartListProp([...props.cartListProp, newItem])
+            let aux = [...props.cartListProp]
+            for (const item of aux) {
+                console.log(item)
+            }
         }
-        // }
+    
 
         return(
             <ProductCardStyle key={index}>
