@@ -6,16 +6,22 @@ import { ProductCards } from './Components/ProductCards'
 
 function App() {
   const [productDb, setProductDb] = useState(mockDb)
-  const [cartList, setCartList] = useState([])
+
+  localStorage.clear()
 
   const addProduct = (data) => {
-    setCartList([...cartList, data])
+    if (localStorage.getItem(`${"prod"+data}`)) {
+      let amountIncrement = parseInt(localStorage.getItem(`${"prod"+data}`))+1
+      localStorage.setItem(`${"prod"+data}`, `${amountIncrement}`)
+    } else{
+      localStorage.setItem(`${"prod"+data}`, "1")
+    }
   }
 
   return (
     <>
-      <ProductCards dbListProp={productDb} setCartListProp={addProduct} cartListProp={cartList}/>
-      <ShoppingCart cartListProp={cartList}/>
+      <ProductCards dbListProp={productDb} addProd={addProduct}/>
+      <ShoppingCart/>
     </>
   );
 }

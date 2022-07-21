@@ -12,34 +12,7 @@ export function ProductCards(props){
             const findIndex = productList2.findIndex(newProduct => {
                 return newProduct === item
             })
-            // props.setCartListProp(productList[findIndex])
-
-            let newItem = 
-                {id: productList[findIndex].id,
-                quantity: 1,
-                name: productList[findIndex].name,
-                }
-
-            // for (const item of props.cartListProp) {
-            //     if (item.id === newItem.id) {
-            //         item.quantity = item.quantity+1
-            //     } else {
-            //         props.setCartListProp([...cartListProp, newItem])
-            //     }
-            // }
-
-            // props.setCartListProp([
-            //     {id: productList[findIndex].id,
-            //     quantity: 0,
-            //     name: productList[findIndex].name,
-            //     }
-            // ])
-
-            props.setCartListProp([...props.cartListProp, newItem])
-            let aux = [...props.cartListProp]
-            for (const item of aux) {
-                console.log(item)
-            }
+            props.addProd(findIndex+1)
         }
     
 
