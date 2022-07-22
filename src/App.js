@@ -6,8 +6,10 @@ import { ProductCards } from './Components/ProductCards'
 
 function App() {
   const [productDb, setProductDb] = useState(mockDb)
+  const [productList, setProductList] = useState(productDb)
+  const [cartList, setCartList] = useState([])
 
-  localStorage.clear()
+  // localStorage.clear()
 
   const addProduct = (data) => {
     if (localStorage.getItem(`${"prod"+data}`)) {
@@ -16,12 +18,19 @@ function App() {
     } else{
       localStorage.setItem(`${"prod"+data}`, "1")
     }
+    let cartListItem = {
+      id: productList[data-1].id,
+      name: productList[data-1].name,
+      price: productList[data-1].price,
+    }
+    setCartList([...cartList, cartListItem])
   }
 
   return (
     <>
-      <ProductCards dbListProp={productDb} addProd={addProduct}/>
-      <ShoppingCart/>
+      {/* <ProductCards dbListProp={productDb} addProd={addProduct}/> */}
+      <ProductCards productListProp={productList} addProd={addProduct}/>
+      <ShoppingCart cartList={cartList}/>
     </>
   );
 }

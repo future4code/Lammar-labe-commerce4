@@ -3,12 +3,13 @@ import { ProductCardStyle, CardsDisplay } from '../Style'
 
 export function ProductCards(props){
 
-    const [productList, setProductList] = useState(props.dbListProp)
+    // const [productList, setProductList] = useState(props.dbListProp)
 
-    const renderList = productList.map((item, index) => {
+    // const renderList = productList.map((item, index) => {
+    const renderList = props.productListProp.map((item, index) => {
 
         const addProduct = () => {
-            const productList2 = [...productList]
+            const productList2 = [...props.productListProp]
             const findIndex = productList2.findIndex(newProduct => {
                 return newProduct === item
             })
