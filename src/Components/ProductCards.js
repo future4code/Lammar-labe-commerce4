@@ -10,14 +10,7 @@ export function ProductCards(props){
 
     const handleOrdem = (event) => {
         setOrder(event.target.value)
-        if (order === "asc"){
-            return 0
-        } else{
-            return -1
-        }
     }
-   
-    const [busca, setBusca] = useState("")
 
     const handleMinPreco = (event) => {
         setMinPreco(event.target.value)
@@ -40,7 +33,6 @@ export function ProductCards(props){
         } else {
             return -1
         }
-        return item.price <= maxPreco || maxPreco === ""
     })
    
 
