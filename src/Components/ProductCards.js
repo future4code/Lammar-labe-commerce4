@@ -17,6 +17,8 @@ export function ProductCards(props){
         }
     }
    
+    const [busca, setBusca] = useState("")
+
     const handleMinPreco = (event) => {
         setMinPreco(event.target.value)
     }
@@ -38,6 +40,7 @@ export function ProductCards(props){
         } else {
             return -1
         }
+        return item.price <= maxPreco || maxPreco === ""
     })
    
 
@@ -73,6 +76,7 @@ export function ProductCards(props){
          value={maxPreco}
          onChange={handleMaxPreco}/>
 
+
          <select
             value = {order}
             onChange={handleOrdem}
@@ -81,13 +85,15 @@ export function ProductCards(props){
                 <option value={"desc"}>Descrescente </option>
          </select>
          
+         
                 </Filtros>
         <Filtros>
             Busca por nome:
         <input
         value={busca}
         onChange={handleBusca}/>
-            </Filtros>
+        </Filtros>
+
         </MainFiltros>
             <CardsDisplay>
                 {renderList}
