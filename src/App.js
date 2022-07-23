@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import { mockDb } from './MockUpDados'
 import { ProductCards } from './Components/ProductCards'
 import { CopyRight } from './Components/CopyRight';
+// import { GrowingPage } from './Components/Growing';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     
       <ProductCards dbListProp={productDb}/>
              
-      <CopyRight/>
+      {/* <CopyRight/> */}
     </>
   );
 }
