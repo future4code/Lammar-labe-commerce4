@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const MainPage = styled.main`
+    width: 100vw;
+`
+
 // Componente ProductCards
 export const CardsDisplay = styled.div`
     display: flex;
@@ -29,12 +33,14 @@ export const ProductCardStyle = styled.div`
 // Componente ShoppingCart
 export const ShoppCart = styled.ul`
     display: flex;
-    border: 1px black solid;
+    flex-direction: column;
 `
 
 export const ShoppCartItem = styled.li`
     list-style: none;
-
+    display: flex;
+    gap: 15px;
+`
 
 
 //Filter
