@@ -2,7 +2,9 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 import { ShoppingCart } from './Components/ShoppingCart'
 import { mockDb } from './MockUpDados'
+import { CopyRight } from './Components/CopyRight'
 import { ProductCards } from './Components/ProductCards'
+// import { GrowingPage } from './Components/Growing';
 
 function App() {
   const [productDb, setProductDb] = useState(mockDb)
@@ -46,8 +48,8 @@ function App() {
     <>
       <ProductCards productListProp={productList} addProd={addProduct}/>
       <ShoppingCart cartList={cartList}/>
+      <CopyRight/>
     </>
   );
 }
-
 export default App;
