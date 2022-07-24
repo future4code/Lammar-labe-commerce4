@@ -21,7 +21,6 @@ export function ProductCards(props){
         setBusca(event.target.value)
     }
 
-
     const produtosFiltrados = productList.filter((item)=>{
         return item.name.includes(busca)
     }).filter((item)=>{

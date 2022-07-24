@@ -4,7 +4,7 @@ import { ShoppingCart } from './Components/ShoppingCart'
 import { mockDb } from './MockUpDados'
 import { CopyRight } from './Components/CopyRight'
 import { ProductCards } from './Components/ProductCards'
-// import { GrowingPage } from './Components/Growing';
+import { MainPage } from "./Style"
 
 function App() {
   const [productDb, setProductDb] = useState(mockDb)
@@ -45,11 +45,11 @@ function App() {
   
 
   return (
-    <>
+    <MainPage>
       <ProductCards productListProp={productList} addProd={addProduct}/>
       <ShoppingCart cartList={cartList}/>
       <CopyRight/>
-    </>
+    </MainPage>
   );
 }
 export default App;

@@ -1,17 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {ShoppCartItem, ShoppCart} from '../Style'
 
 export function ShoppingCart(props){
 
     const renderList = props.cartList.map(item => {
         return (
-            <>
                 <ShoppCartItem>
-                    {item.quantity}x 
-                    {item.name.charAt(0).toUpperCase()+item.name.slice(1)}
-                    {item.price}
+                    <span>{item.quantity}x </span>
+                    <span>{item.name.charAt(0).toUpperCase()+item.name.slice(1)}</span>
+                    <span>{item.price}</span>
                 </ShoppCartItem>
-            </>
         )
     })
 
