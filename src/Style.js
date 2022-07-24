@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 // Componente ProductCards
 export const CardsDisplay = styled.div`
     display: flex;
@@ -16,7 +15,7 @@ export const ProductCardStyle = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 10px;
-    
+
     p{
         padding: 0 10px;
         margin: 5px 0;
@@ -27,14 +26,23 @@ export const ProductCardStyle = styled.div`
     }
 `
 
-//Filter
+// Componente ShoppingCart
+export const ShoppCart = styled.ul`
+    display: flex;
+    border: 1px black solid;
+`
 
+export const ShoppCartItem = styled.li`
+    list-style: none;
+
+
+
+//Filter
 export const MainFiltros = styled.div`
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     width: 300px;
-
     
 `
 export const Filtros = styled.label`
@@ -57,5 +65,4 @@ export const Footer = styled.div`
     p {
         font-weight: bold;
     }
-
 `
