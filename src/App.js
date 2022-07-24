@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { ShoppingCart } from './Components/ShoppingCart'
 import { mockDb } from './MockUpDados'
 import { ProductCards } from './Components/ProductCards'
@@ -9,22 +9,38 @@ function App() {
   const [productList, setProductList] = useState(productDb)
   const [cartList, setCartList] = useState([])
 
-  // localStorage.clear()
-
-  const addProduct = (data) => {
-    if (localStorage.getItem(`${"prod"+data}`)) {
-      let amountIncrement = parseInt(localStorage.getItem(`${"prod"+data}`))+1
-      localStorage.setItem(`${"prod"+data}`, `${amountIncrement}`)
-    } else{
-      localStorage.setItem(`${"prod"+data}`, "1")
+  const addProduct = (index) => {
+    let newProduct = {
+      id: productList[index].id,
+      name: productList[index].name,
+      price: productList[index].price,
+      quantity: 1
     }
-    let cartListItem = {
-      id: productList[data-1].id,
-      name: productList[data-1].name,
-      price: productList[data-1].price,
+    let newItem = true
+    if (localStorage.getItem("shoppCart")) {
+      let cartListAux = JSON.parse(localStorage.getItem("shoppCart"))
+      for (let i = 0; i < cartListAux.length; i++) {
+        if (cartListAux[i].id === index+1) {
+          cartListAux[i].quantity++
+          newItem = false
+        }
+      }
+      setCartList(cartListAux)
     }
-    setCartList([...cartList, cartListItem])
+    if (newItem) {
+      setCartList([...cartList, newProduct])
+    }
   }
+
+  useEffect(() => {
+    const data = localStorage.getItem("shoppCart")
+    if (data !== null) setCartList(JSON.parse(data))
+  }, [])
+
+  useEffect(() =>{
+    localStorage.setItem("shoppCart", JSON.stringify(cartList))
+  }, [cartList])
+  
 
   return (
     <>

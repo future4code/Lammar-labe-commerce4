@@ -13,7 +13,7 @@ export function ProductCards(props){
             const findIndex = productList2.findIndex(newProduct => {
                 return newProduct === item
             })
-            props.addProd(findIndex+1)
+            props.addProd(findIndex)
         }
     
 
