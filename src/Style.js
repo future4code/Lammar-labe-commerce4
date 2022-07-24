@@ -34,7 +34,7 @@ export const ShoppCart = styled.ul`
 
 export const ShoppCartItem = styled.li`
     list-style: none;
-
+`
 
 
 //Filter
