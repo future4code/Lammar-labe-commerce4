@@ -44,7 +44,6 @@ function App() {
 
   return (
     <>
-      {/* <ProductCards dbListProp={productDb} addProd={addProduct}/> */}
       <ProductCards productListProp={productList} addProd={addProduct}/>
       <ShoppingCart cartList={cartList}/>
     </>

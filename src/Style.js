@@ -25,3 +25,12 @@ export const ProductCardStyle = styled.div`
         align-self: center;
     }
 `
+
+export const ShoppCart = styled.ul`
+    display: flex;
+    border: 1px black solid;
+`
+
+export const ShoppCartItem = styled.li`
+    list-style: none;
+`

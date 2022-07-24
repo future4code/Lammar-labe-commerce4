@@ -1,18 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import {ShoppCartItem, ShoppCart} from '../Style'
 
 export function ShoppingCart(props){
 
     const renderList = props.cartList.map(item => {
-        return <li>{item.quantity}{item.name}</li>
+        return (
+            <>
+                <ShoppCartItem>
+                    {item.quantity}x 
+                    {item.name.charAt(0).toUpperCase()+item.name.slice(1)}
+                    {item.price}
+                </ShoppCartItem>
+            </>
+        )
     })
 
     return(
         <>
             <h2>Carrinho:</h2>
-            <ul>
+            <ShoppCart>
                 {renderList.length > 0 ? renderList : 'Carrinho vazio.'}
-                {/* <li>{localStorage.getItem("prod1")}</li> */}
-            </ul>
+            </ShoppCart>
         </>
     )
 }

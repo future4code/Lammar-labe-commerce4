@@ -1,11 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { ProductCardStyle, CardsDisplay } from '../Style'
 
 export function ProductCards(props){
 
-    // const [productList, setProductList] = useState(props.dbListProp)
-
-    // const renderList = productList.map((item, index) => {
     const renderList = props.productListProp.map((item, index) => {
 
         const addProduct = () => {
